@@ -1,1 +1,2 @@
-Escreva uma função para desalocar uma lista, ou seja, desaloca todos os elementos, suas respectivas informações e zera o campo qtd.
+Faça uma função que retorna a quantidade de elementos em uma lista (sem usar qtd).
+int conta_elementos( Lista l )
