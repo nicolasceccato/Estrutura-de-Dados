@@ -22,3 +22,7 @@ int insere_inicio (Lista *p, void *info);
 int remove_inicio (Lista *p, void *info);
 
 void mostra_lista (Lista l, void (*mostra)(void*));
+
+int conta_elementos(Lista l);
+
+void limpa_lista(Lista *p);

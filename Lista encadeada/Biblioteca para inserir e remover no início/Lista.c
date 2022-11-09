@@ -51,3 +51,22 @@ void mostra_lista (Lista l, void (*mostra)(void*)){
         }
     }
 }
+int conta_elementos(Lista l){
+    int cont = 0;
+    Elemento *aux = l.cabeca;
+    while(aux != NULL){
+        cont++;
+        aux = aux->proximo;
+    }
+    return cont;
+}
+void limpa_lista(Lista *p){
+    Elemento *aux = p->cabeca;
+    while(aux != NULL){
+        Elemento *prox = aux->proximo;
+        free(aux->info);
+        free(aux);
+        aux = prox;
+    }
+    inicializa_lista(p, p->tamInfo);
+}
