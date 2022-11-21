@@ -191,4 +191,14 @@ int modifica_valor (Lista l, void *info, int pos){
     memcpy(aux->info, info, l.tamInfo);
     return 1; // Sucesso!
 }
+int insere_ordem( Lista *p, void *info, int (*compara)(void*, void*) ){
+    Elemento *aux = p->cabeca;
+    int cont = 0;
+
+    while (aux !=NULL && compara(info, aux->info) > 0){
+        aux = aux->proximo;
+        cont++;
+    }
+    return insere_pos (p, info, cont);
+}
 

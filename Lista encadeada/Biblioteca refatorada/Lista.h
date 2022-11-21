@@ -40,3 +40,5 @@ int remove_pos (Lista *p, void *info, int pos);
 int le_valor (Lista l, void *info, int pos);
 
 int modifica_valor (Lista l, void *info, int pos);
+
+int insere_ordem( Lista *p, void *info, int (*compara)(void*, void*) );
