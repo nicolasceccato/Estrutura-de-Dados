@@ -11,11 +11,11 @@ int main(){
     inicializa_lista(&l1, 4);
     inicializa_lista(&l2, 4);
     int x = 9; 
-    insere_ordem(&l1, &x, compara_int);
+   // insere_ordem(&l1, &x, compara_int);
     x = 2; 
-    insere_ordem(&l1, &x, compara_int);
+   // insere_ordem(&l1, &x, compara_int);
     x = 5; 
-    insere_ordem(&l1, &x, compara_int);
+   // insere_ordem(&l1, &x, compara_int);
     x = 3;
     insere_ordem(&l2, &x, compara_int);
     x = 33;
@@ -33,12 +33,17 @@ int main(){
 }
 void concatena (Lista *a, Lista *b){
     Elemento *auxiliar = b->cabeca;
-    while(auxiliar->proximo != NULL){
+    if (lista_vazia(*b)){
+
+    }else{
+        while(auxiliar->proximo != NULL){
+            insere_fim(a, auxiliar->info);
+            auxiliar = auxiliar->proximo;
+        }
         insere_fim(a, auxiliar->info);
-        auxiliar = auxiliar->proximo;
+        limpa_lista(b);
     }
-    insere_fim(a, auxiliar->info);
-    limpa_lista(b);
+
 }
 void imprime_int (void *x){
     int *a = x;
